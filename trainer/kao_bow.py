@@ -42,10 +42,10 @@ from sklearn.metrics import confusion_matrix
 
 #     return X,Y
 
-# def read_multiple_csv(path):
-#     with file_io.FileIO(path, mode='r') as file:
-#         df = pd.read_csv(file, index_col=None, header=0)
-#     return df
+def read_multiple_csv(path):
+    with file_io.FileIO(path, mode='r') as file:
+        df = pd.read_csv(file, index_col=None, header=0)
+    return df
 
 def main(job_dir,**args):
     # #tuning parameter
@@ -75,8 +75,9 @@ def main(job_dir,**args):
     # model.fit(x=X_train, y=Y_train, epochs=epoch, verbose=1, batch_size=batch_size, callbacks=[tensorboard],validation_data = (X_test, Y_test))
 
     #------------------------- Read data ------------------------------
-    file = open(csv_folder, 'r',encoding = 'utf-8-sig')
-    data = list(csv.reader(file))
+    # file = open(csv_folder, 'r',encoding = 'utf-8-sig')
+    # data = list(csv.reader(file))
+    data = read_multiple_csv(csv_folder)
     shuffle(data)
 
     # for d in data:
