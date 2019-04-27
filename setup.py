@@ -12,6 +12,7 @@ setup(name='trainer',
           'deepcut',
           'h5py',
           'pandas',
-          'scikit-learn'
+          'scikit-learn',
+          'matplotlib'
       ],
       zip_safe=False)
